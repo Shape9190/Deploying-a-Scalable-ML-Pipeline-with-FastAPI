@@ -1,0 +1,13 @@
+prefix=/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/.conda
+exec_prefix=/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/.conda
+libdir=/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/.conda/lib
+sharedlibdir=/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/.conda/lib
+includedir=/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/.conda/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

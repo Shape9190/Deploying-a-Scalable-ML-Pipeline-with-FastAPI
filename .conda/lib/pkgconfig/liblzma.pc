@@ -1,0 +1,20 @@
+#
+# Author: Lasse Collin
+#
+# This file has been put into the public domain.
+# You can do whatever you want with this file.
+#
+
+prefix=/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/.conda
+exec_prefix=/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/.conda
+libdir=/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/.conda/lib
+includedir=/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/.conda/include
+
+Name: liblzma
+Description: General purpose data compression library
+URL: https://xz.tukaani.org/xz-utils/
+Version: 5.4.6
+Cflags: -I${includedir}
+Cflags.private: -DLZMA_API_STATIC
+Libs: -L${libdir} -llzma
+Libs.private: -pthread -lpthread
