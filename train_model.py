@@ -13,7 +13,7 @@ from ml.model import (
     train_model,
 )
 # TODO: load the cencus.csv data
-project_path = "Your path here"
+project_path = "../Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
 data_path = os.path.join(project_path, "data", "census.csv")
 print(data_path)
 data = pd.read_csv(data_path)
@@ -39,7 +39,7 @@ X_train, y_train, encoder, lb = process_data(
     test,
     categorical_features=cat_features,
     label="salary",
-    taining=True
+    training=True
     )
 
 X_test, y_test, _, _ = process_data(
