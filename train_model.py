@@ -20,7 +20,7 @@ data = pd.read_csv(data_path)
 
 # TODO: split the provided data to have a train dataset and a test dataset
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
-train, test = train_test_split(data_path)
+train, test = train_test_split(data, test_size=0.20)
 
 # DO NOT MODIFY
 cat_features = [
@@ -61,9 +61,7 @@ encoder_path = os.path.join(project_path, "model", "encoder.pkl")
 save_model(encoder, encoder_path)
 
 # load the model
-model = load_model(
-    model_path
-) 
+model = load_model(model_path) 
 
 # TODO: use the inference function to run the model inferences on the test dataset.
 preds = inference(model, X_test)
