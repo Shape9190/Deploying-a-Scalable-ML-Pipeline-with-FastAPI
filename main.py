@@ -44,7 +44,7 @@ async def get_root():
 
 
 # TODO: create a POST on a different path that does model inference
-@app.post("/data/")
+@app.post("/data")
 async def post_inference(data: Data):
     # DO NOT MODIFY: turn the Pydantic model into a dict.
     data_dict = data.dict()
@@ -65,7 +65,7 @@ async def post_inference(data: Data):
         "native-country",
     ]
     data_processed, _, _, _ = process_data(
-        
+        #input for process_data
         data,
         categorical_features=cat_features,
         label=None,

@@ -1,5 +1,4 @@
 import json
-
 import requests
 
 url =  "http://127.0.0.1:8000"
@@ -30,11 +29,11 @@ data = {
 }
 
 # send a POST using the data above
-call_url = url+"/data/"
-post_request = requests.post(call_url, json=data)
+post_url = url+"/data"
+pr = requests.post(post_url, json=data)
 
 
 # print the status code
-print(post_request.status_code)
+print(pr.status_code)
 # print the result
-print(post_request.text)
+print(pr.text)
