@@ -12,11 +12,11 @@ from ml.model import (
     save_model,
     train_model,
 )
-# TODO: load the cencus.csv data
-project_path = "../Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
-data_path = os.path.join(project_path, "data", "census.csv")
-print(data_path)
-data = pd.read_csv(data_path)
+# TODO: load the census.csv data
+project = "/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
+data_path = os.path.join(project, "data", "census.csv")
+data = pd.read_csv(data_path,delimiter=",")
+print(data.head())
 
 # TODO: split the provided data to have a train dataset and a test dataset
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
@@ -55,9 +55,9 @@ X_test, y_test, _, _ = process_data(
 model = train_model(X_train, y_train)
 
 # save the model and the encoder
-model_path = os.path.join(project_path, "model", "model.pkl")
+model_path = os.path.join(project, "model", "model.pkl")
 save_model(model, model_path)
-encoder_path = os.path.join(project_path, "model", "encoder.pkl")
+encoder_path = os.path.join(project, "model", "encoder.pkl")
 save_model(encoder, encoder_path)
 
 # load the model

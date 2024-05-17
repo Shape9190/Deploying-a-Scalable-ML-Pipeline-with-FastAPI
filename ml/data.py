@@ -1,5 +1,6 @@
 import numpy as np
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
+import pandas as pd
 
 
 def process_data(

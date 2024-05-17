@@ -1,28 +1,46 @@
 import pytest
 # TODO: add necessary import
+import pandas as pd
+from ml.data import *
+from ml.model import *
+from train_model import *
+
+
+project = "/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
+data_path = os.path.join(project, "data", "census.csv")
+data = pd.read_csv(data_path,delimiter=",")
+
 
 # TODO: implement the first test. Change the function name and input as needed
-def test_one():
+def test_shape():
     """
-    # add description for the first test
+    # Ensure data is without null values
     """
-    # Your code here
-    pass
+    assert data.shape == data.dropna().shape
+   
 
 
 # TODO: implement the second test. Change the function name and input as needed
-def test_two():
+def test_process_data():
     """
-    # add description for the second test
+    # Confirm process_data function performing as intended
     """
-    # Your code here
-    pass
+    X_train, y_train, encoder, lb = process_data(
+        data,
+        categorical_features=cat_features,
+        label="salary",
+        training=True
+    )
 
+    assert X_train.shape[0] > 0
+    assert y_train.shape[0] > 0
 
 # TODO: implement the third test. Change the function name and input as needed
-def test_three():
+def test_pickle():
     """
-    # add description for the third test
+    # Check that model saved to pickle 
     """
-    # Your code here
-    pass
+    pe = os.path.join(project, "model", "encoder.pkl")
+    pm = os.path.join(project, "model", "model.pkl")
+    assert os.path.exists(pe)
+    assert os.path.exists(pm)
