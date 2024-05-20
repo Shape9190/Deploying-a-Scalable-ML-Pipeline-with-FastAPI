@@ -7,6 +7,9 @@ from pydantic import BaseModel, Field
 from ml.data import apply_label, process_data
 from ml.model import inference, load_model
 
+#importing additional
+
+
 # DO NOT MODIFY
 class Data(BaseModel):
     age: int = Field(..., example=37)
@@ -26,10 +29,10 @@ class Data(BaseModel):
     hours_per_week: int = Field(..., example=40, alias="hours-per-week")
     native_country: str = Field(..., example="United-States", alias="native-country")
 
-path =  "../Deploying-a-Scalable-ML-Pipeline-with-FastAPI/model/encoder.pkl"
+path =  "model/encoder.pkl"
 encoder = load_model(path)
 
-path = "../Deploying-a-Scalable-ML-Pipeline-with-FastAPI/model/model.pkl"
+path = "model/model.pkl"
 model = load_model(path)
 
 # TODO: create a RESTful API using FastAPI
@@ -39,12 +42,11 @@ app = FastAPI()
 @app.get("/")
 async def get_root():
     """ Say hello!"""
-    welcome_message = {"result": "Please enjoy this FastAPI"}
-    return(welcome_message)
+    return {"Result":"Hello and welcome!"}
 
 
 # TODO: create a POST on a different path that does model inference
-@app.post("/data")
+@app.post("/data/")
 async def post_inference(data: Data):
     # DO NOT MODIFY: turn the Pydantic model into a dict.
     data_dict = data.dict()
@@ -73,4 +75,4 @@ async def post_inference(data: Data):
         encoder=encoder
     )
     _inference = inference(model, data_processed)
-    return {"result": apply_label(_inference)}
+    return {"Result": apply_label(_inference)}

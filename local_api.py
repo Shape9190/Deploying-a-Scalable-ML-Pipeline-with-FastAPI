@@ -1,13 +1,14 @@
 import json
 import requests
 
+
 url =  "http://127.0.0.1:8000"
-r = requests.get(url)
+response = requests.get(url)
 
 # print the status code
-print(r.status_code)
+print({"Status Code": response.status_code})
 # print the welcome message
-print(r.text)
+print(response.json())
 
 
 
@@ -29,11 +30,10 @@ data = {
 }
 
 # send a POST using the data above
-post_url = url+"/data"
-pr = requests.post(post_url, json=data)
+response = requests.post(url+"/data/", data=json.dumps(data))
 
 
 # print the status code
-print(pr.status_code)
+print({"Status Code": response.status_code})
 # print the result
-print(pr.text)
+print(response.json())
