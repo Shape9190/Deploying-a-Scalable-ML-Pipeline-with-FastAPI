@@ -12,9 +12,15 @@ Model should be used to predict if an individuall's annual income is more or les
 Training data consists of 80% of total data
 
 ## Evaluation Data
-Testing was performed on the remaining 20% of the data
+Testing was performed on the remaining 20% of the total data
+
 ## Metrics
-_Please include the metrics used and your model's performance on those metrics._
+The metrics used were the precision score, recall score, and Fbeta score.
+
+The datasets results:
+Precision: 0.8582
+Recall: 0.7173
+F1: 0.7814
 
 ## Ethical Considerations
 
