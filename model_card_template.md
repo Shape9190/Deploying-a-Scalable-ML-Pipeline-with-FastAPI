@@ -3,7 +3,7 @@
 For additional information see the Model Card paper: https://arxiv.org/pdf/1810.03993.pdf
 
 ## Model Details
-Laura Kruize modified model. A machine learning model of Census Data. Using scikit-learn hyperpameters, trained with scikit-learn, and RandomForestClassifier model type.
+A modified model. A machine learning model of Census Data. Using scikit-learn hyperpameters, trained with scikit-learn, and RandomForestClassifier model type.
 
 ## Intended Use
 Model should be used to predict if an individuall's annual income is more or less than $50,000.
@@ -23,5 +23,7 @@ Recall: 0.7173
 F1: 0.7814
 
 ## Ethical Considerations
+Risk: The dataset may present an ethical risk of unproportionate category values that may sway the results. 
 
 ## Caveats and Recommendations
+Recommendation of multiple testing rounds to best produce more accurate metric results.
