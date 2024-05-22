@@ -12,7 +12,7 @@ Model should be used to predict if an individuall's annual income is more or les
 Training data consists of 80% of total data
 
 ## Evaluation Data
-
+Testing was performed on the remaining 20% of the data
 ## Metrics
 _Please include the metrics used and your model's performance on those metrics._
 
