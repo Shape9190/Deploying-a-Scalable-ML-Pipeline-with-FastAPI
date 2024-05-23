@@ -42,7 +42,7 @@ def test_pickle():
     """
     # Check that model saved to pickle 
     """
-    pe = os.path.join(project, "ml/encoder.pkl")
-    pm = os.path.join(project, "ml/model.pkl")
+    pe = os.path.join(project, "model/encoder.pkl")
+    pm = os.path.join(project, "model/model.pkl")
     assert os.path.exists(pe)
     assert os.path.exists(pm)
