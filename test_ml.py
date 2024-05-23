@@ -1,15 +1,17 @@
 import pytest
 # TODO: add necessary import
 import os
+from os import path
 import pandas as pd
+from sklearn.model_selection import train_test_split
 from ml.data import process_data
-from ml.model import load_model
-from train_model import cat_features
+from train_model import cat_features, train_test_split
+from ml.model import train_model
 
 
 
-project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
-data_path = os.path.join(project, "data", "census.csv")
+#project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
+#data_path = os.path.join(project, "data", "census.csv")
 data = pd.read_csv("../data/census.csv",delimiter=",")
 
 
@@ -42,7 +44,7 @@ def test_pickle():
     """
     # Check that model saved to pickle 
     """
-    pe = os.path.join("../model/encoder.pkl")
-    pm = os.path.join("../model/model.pkl")
+    pe = os.path("../model/encoder.pkl")
+    pm = os.path("../model/model.pkl")
     assert os.path.exists(pe)
     assert os.path.exists(pm)
