@@ -3,7 +3,7 @@ import pytest
 import os
 import pandas as pd
 from ml.data import process_data
-#from ml.model import *
+from ml.model import save_model
 from train_model import cat_features
 
 
