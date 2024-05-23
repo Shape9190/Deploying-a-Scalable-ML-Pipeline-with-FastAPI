@@ -54,9 +54,8 @@ X_test, y_test, _, _ = process_data(
 model = train_model(X_train, y_train)
 
 # save the model and the encoder
-model_path = os.path.join(project, "model", "model.pkl")
-save_model(model, model_path)
-encoder_path = os.path.join(project, "model", "encoder.pkl")
+model_path = os.path.join(project,"model/model.pkl")
+encoder_path = os.path.join(project,"model/encoder.pkl")
 save_model(encoder, encoder_path)
 
 # load the model

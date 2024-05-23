@@ -4,13 +4,13 @@ import os
 import pandas as pd
 import pickle
 from ml.data import process_data
-from ml.model import save_model
+#from ml.model import 
 from train_model import cat_features
 
 
 
-
-data = pd.read_csv("../data/census.csv",delimiter=",")
+project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
+data = pd.read_csv("data/census.csv",delimiter=",")
 
 
 # TODO: implement the first test. Change the function name and input as needed
@@ -42,7 +42,7 @@ def test_pickle():
     """
     # Check that model saved to pickle 
     """
-    pe = os.path("../model/encoder.pkl")
-    pm = os.path("../model/model.pkl")
+    pe = os.path.join(project,"model/encoder.pkl")
+    pm = os.path.join(project,"model/model.pkl")
     assert os.path.exists(pe)
     assert os.path.exists(pm)
