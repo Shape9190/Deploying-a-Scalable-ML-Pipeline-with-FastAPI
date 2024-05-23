@@ -4,6 +4,7 @@ import pandas as pd
 from ml.data import *
 from ml.model import *
 from train_model import *
+import os
 
 
 project = "~/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
