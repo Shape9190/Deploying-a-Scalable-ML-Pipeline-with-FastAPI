@@ -6,8 +6,8 @@ from ml.model import *
 from train_model import *
 
 
-#project = "/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/data/census.csv"
-data_path = os.path.join("/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/data/census.csv")
+project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
+data_path = os.path.join(project, "data", "census.csv")
 data = pd.read_csv(data_path,delimiter=",")
 
 
