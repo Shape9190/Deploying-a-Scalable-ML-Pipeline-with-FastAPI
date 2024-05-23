@@ -1,6 +1,6 @@
 import pickle
 from sklearn.metrics import fbeta_score, precision_score, recall_score
-from data import process_data
+from ml.data import process_data
 # Adding neccessary imports
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
