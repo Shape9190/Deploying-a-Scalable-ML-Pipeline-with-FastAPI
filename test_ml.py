@@ -8,7 +8,7 @@ from train_model import cat_features
 
 
 
-project = "~/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
+project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
 data_path = os.path.join(project,"data/census.csv")
 data = pd.read_csv(data_path,delimiter=",")
 
@@ -42,7 +42,7 @@ def test_pickle():
     """
     # Check that model saved to pickle 
     """
-    pe = os.path.join(project, "model/encoder.pkl")
-    pm = os.path.join(project, "model/model.pkl")
+    pe = os.path.join(project, "ml/encoder.pkl")
+    pm = os.path.join(project, "ml/model.pkl")
     assert os.path.exists(pe)
     assert os.path.exists(pm)
