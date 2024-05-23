@@ -2,6 +2,7 @@ import pytest
 # TODO: add necessary import
 import os
 import pandas as pd
+import pickle
 from ml.data import process_data
 from ml.model import save_model
 from train_model import cat_features
