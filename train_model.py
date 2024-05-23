@@ -13,10 +13,9 @@ from ml.model import (
     train_model,
 )
 # TODO: load the census.csv data
-project = "/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
-data_path = os.path.join(project, "data", "census.csv")
+project = "~/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
+data_path = os.path.join(project, "data/census.csv")
 data = pd.read_csv(data_path,delimiter=",")
-print(data.head())
 
 # TODO: split the provided data to have a train dataset and a test dataset
 # Optional enhancement, use K-fold cross validation instead of a train-test split.

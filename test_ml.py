@@ -1,10 +1,11 @@
 import pytest
 # TODO: add necessary import
+import os
 import pandas as pd
 from ml.data import *
 from ml.model import *
 from train_model import *
-import os
+
 
 
 project = "~/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
@@ -41,7 +42,7 @@ def test_pickle():
     """
     # Check that model saved to pickle 
     """
-    pe = os.path.join(project, "model", "encoder.pkl")
-    pm = os.path.join(project, "model", "model.pkl")
+    pe = os.path.join(project, "model/encoder.pkl")
+    pm = os.path.join(project, "model/model.pkl")
     assert os.path.exists(pe)
     assert os.path.exists(pm)
