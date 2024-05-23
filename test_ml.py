@@ -1,15 +1,15 @@
 import pytest
 # TODO: add necessary import
-#import os
+import os
 import pandas as pd
 from ml.data import process_data
-#from ml.model import *
+from ml.model import load_model
 from train_model import cat_features
 
 
 
-#project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
-#data_path = os.path.join(project, "data", "census.csv")
+project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
+data_path = os.path.join(project, "data", "census.csv")
 data = pd.read_csv("../data/census.csv",delimiter=",")
 
 
