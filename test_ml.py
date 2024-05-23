@@ -2,15 +2,15 @@ import pytest
 # TODO: add necessary import
 import os
 import pandas as pd
-from ml.data import *
-from ml.model import *
-from train_model import *
+from ml.data import process_data
+#from ml.model import *
+from train_model import project,data, cat_features
 
 
 
-project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
-data_path = os.path.join(project, "data", "census.csv")
-data = pd.read_csv(data_path,delimiter=",")
+#project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
+#data_path = os.path.join(project, "data", "census.csv")
+#data = pd.read_csv(data_path,delimiter=",")
 
 
 # TODO: implement the first test. Change the function name and input as needed
