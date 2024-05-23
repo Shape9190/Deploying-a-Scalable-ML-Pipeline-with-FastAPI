@@ -10,7 +10,7 @@ from train_model import cat_features
 
 #project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
 #data_path = os.path.join(project, "data", "census.csv")
-data = pd.read_csv(data_path,delimiter=",")
+data = pd.read_csv("../data/census.csv",delimiter=",")
 
 
 # TODO: implement the first test. Change the function name and input as needed
