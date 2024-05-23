@@ -3,14 +3,14 @@ import pytest
 import os
 import pandas as pd
 from ml.data import process_data
-from ml.model import inference
-from train_model import *
+#from ml.model import *
+from train_model import cat_features
 
 
 
-#project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
-#data_path = os.path.join(project,"data/census.csv")
-data = pd.read_csv("../data/census.csv")
+project = "~/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
+data_path = os.path.join(project,"data/census.csv")
+data = pd.read_csv(data_path,delimiter=",")
 
 
 # TODO: implement the first test. Change the function name and input as needed
@@ -46,5 +46,3 @@ def test_pickle():
     pm = os.path.join(project, "model/model.pkl")
     assert os.path.exists(pe)
     assert os.path.exists(pm)
-
-    pass
