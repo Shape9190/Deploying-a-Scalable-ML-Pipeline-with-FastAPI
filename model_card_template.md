@@ -18,9 +18,7 @@ Testing was performed on the remaining 20% of the total data
 The metrics used were the precision score, recall score, and Fbeta score.
 
 The datasets results:
-Precision: 0.8582
-Recall: 0.7173
-F1: 0.7814
+Precision: 0.8717 | Recall: 0.7200 | F1: 0.7886
 
 ## Ethical Considerations
 Risk: The dataset may present an ethical risk of unproportionate category values that may sway the results. 
