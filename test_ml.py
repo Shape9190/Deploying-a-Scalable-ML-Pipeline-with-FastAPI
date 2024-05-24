@@ -12,7 +12,7 @@ from ml.data import process_data
 
 
 #collect data
-project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
+project = "Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
 data_path = os.path.join(project, "data", "census.csv")
 data = pd.read_csv(data_path,delimiter=",")
 
