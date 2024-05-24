@@ -2,32 +2,39 @@ import pytest
 # TODO: add necessary import
 import os
 import pandas as pd
-from ml.data import *
-from ml.model import (
-    compute_model_metrics,
-    inference,
-    load_model,
-    performance_on_categorical_slice,
-    save_model,
-    train_model,
-)
-from train_model import cat_features
+import numpy as np
+import sklearn
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from ml.data import process_data
 
 
 
-#project = "Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
-#data_path = os.path.join(project, "data", "census.csv")
-#data = pd.read_csv(data_path,delimiter=",")
 
-@pytest.fixture
-def data():
-    path = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
-    df_path = os.path.join(path,"data/census.csv")
-    df = pd.read_csv(df_path)
-    return df
+#collect data
+project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
+data_path = os.path.join(project, "data", "census.csv")
+data = pd.read_csv(data_path,delimiter=",")
+
+#Variables
+train, test = train_test_split(data, test_size=0.20)
+cat_features = [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+]
+
+
+
+
 
 # TODO: implement the first test. Change the function name and input as needed
-def test_shape(data: pd.DataFrame):
+def test_shape():
     """
     # Ensure data is without null values
     """
@@ -36,27 +43,30 @@ def test_shape(data: pd.DataFrame):
 
 
 # TODO: implement the second test. Change the function name and input as needed
-def test_process_data(data: pd.DataFrame):
+def test_process_data():
     """
     # Confirm process_data function performing as intended
     """
+
     X_train, y_train, encoder, lb = process_data(
-        data,
-        categorical_features=cat_features,
-        label="salary",
-        training=True
+    test,
+    categorical_features=cat_features,
+    label="salary",
+    training=True
     )
+
+   
 
     assert X_train.shape[0] > 0
     assert y_train.shape[0] > 0
 
 # TODO: implement the third test. Change the function name and input as needed
-def pickle_made(data: pd.DataFrame):
+def test_percentages():
     """
-    Confirm the pickle files were made 
+    # check intended percentage of rows/data is delegated
     """
-    project = "~/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
-    model_pickle = os.path.join(project, "model", "model.pkl")
-    
-    assert os.path.exists(model_pickle)
+    train_percent = int(data.shape[0] * 0.80)
+    test_percent =  int(data.shape[0] * 0.20)
 
+    assert abs(train.shape[0] - train_percent) <= 1
+    assert abs(test.shape[0] - test_percent) <= 1
