@@ -3,11 +3,18 @@ import pytest
 import os
 import pandas as pd
 from ml.data import *
-from ml.model import *
+from ml.model import (
+    compute_model_metrics,
+    inference,
+    load_model,
+    performance_on_categorical_slice,
+    save_model,
+    train_model,
+)
 from train_model import cat_features
 
 
-project = "/home/yahoo4173/Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
+project = "Deploying-a-Scalable-ML-Pipeline-with-FastAPI/"
 data_path = os.path.join(project, "data", "census.csv")
 data = pd.read_csv(data_path,delimiter=",")
 
